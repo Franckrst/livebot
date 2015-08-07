@@ -21,8 +21,8 @@
 var spam = require("../../modules/spam");
 
 module.exports = function(bot) {
-    var adminUsernames = ['Oasis'];0
-    var usernameRegex = /^@\w+$/;
+    var adminUsernames = [ 'Oasis' ];
+    var usernameRegex = /^@[\w-]+$/;
     var ranksFilename = __dirname+'/ranks.json';
     var allowNegativeRanks = true;
     var topLength = 10;
@@ -40,7 +40,7 @@ module.exports = function(bot) {
     }
     
     function operationOutput(operationString, rawPoints, currentUsername, currentPoints) {
-        return operationString + rawPoints + pluralize(' point', rawPoints) + ' to ' + currentUsername + ' (Total ' + pluralize(' point', currentPoints) + ': ' + currentPoints + ')';
+        return operationString + rawPoints + pluralize(' point', rawPoints) + ' to ' + currentUsername + ' [Total ' + pluralize(' point', currentPoints) + ': ' + currentPoints + ']';
     }
     
     function pluralize(word, amount) {
@@ -143,7 +143,7 @@ module.exports = function(bot) {
                 
                 for (var key in ranks) {
                     if (ranks.hasOwnProperty(key) && i < length) {
-                        str += '#' + (i + 1) + ' - ' + key + ' (' + ranks[key] + pluralize(' point', ranks[key]) + ')\n';
+                        str += '#' + (i + 1) + ' - ' + key + ' [' + ranks[key] + pluralize(' point', ranks[key]) + ']\n';
                     }
                     
                     i++;
