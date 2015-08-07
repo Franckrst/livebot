@@ -7,6 +7,7 @@ prompt.get({properties: {password: {hidden: true}}}, function (err, result) {
     
     var bot = new LiveBot('livebot',result.password,'oasis','BOT#');
     
+    require('./plugins/restService')(bot);
 
     require('./plugins/userJoinLeave')(bot,"https://www.livecoding.tv/rss/oasis/followers/?key=GamSOPCpH1AFdCze");
     
