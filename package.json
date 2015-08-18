@@ -1,0 +1,27 @@
+{
+  "name": "livebot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "prompt": "~0.2.14",
+    "simple-xmpp": "~0.1.92"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "franckrst",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "toto"
+  },
+  "keywords": [
+    "obs",
+    "livecoding",
+    "bot",
+    "plugin"
+  ]
+}
