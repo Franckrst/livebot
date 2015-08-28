@@ -11,6 +11,8 @@
 var request = require("request");
 var xml2js = require("xml2js");
 var spam = require("../../modules/spam");
+var beer = require("../beer");
+
 module.exports = function(bot,rss){
     var spamFilter = new spam(30);
     bot.on('userLeave',function(pseudo){
@@ -38,6 +40,8 @@ module.exports = function(bot,rss){
         });
     });
     bot.on('userJoin',function(pseudo){
-        //bot.send('Bonjour '+pseudo);
+        if (pseudo in beer.vip) {
+            bot.send(bot.userName + ' donne une bière à ' + pseudo);
+        }
     });
 }

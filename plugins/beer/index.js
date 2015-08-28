@@ -13,7 +13,8 @@
 var spam = require("../../modules/spam");
 
 module.exports = function(bot) {
-
+  var vip = ['Xarkham', 'Oasis'];
+  
   var spamTest = new spam(5);
   bot.on('message',function(pseudo,message){
     var message = message.split(' ');
@@ -22,7 +23,7 @@ module.exports = function(bot) {
         if(spamTest.isOk("beer")){
           var users = bot.users;
           if (message[1] in users) {
-            bot.send(bot.username + ' donne une bière à '+ message[1]);
+            bot.send(bot.userName + ' donne une bière à '+ message[1]);
           }
         }
       }
